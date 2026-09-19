@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ministry of Consumer Affairs, Food & Public Distribution — KisanSetu Command Portal</title>
+  <meta name="description" content="Official Government of India Price Intelligence, Anti-Hoarding & Direct Farm-Gate Buffer Stock Dashboard for the Department of Consumer Affairs & DFPD." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- Top Sovereign National Ticker -->
+  <header class="gov-national-ticker">
+    <div class="gov-national-ticker-inner">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span class="gov-badge-official">🇮🇳 भारत सरकार • Government of India</span>
+        <span>उपभोक्ता मामले, खाद्य और सार्वजनिक वितरण मंत्रालय • Price Monitoring Division (PMD)</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <span>📡 Central APMC Mandi Influx Gateway: <strong style="color: #34d399;">LIVE (2,410 Mandis Synced)</strong></span>
+        <span>🛡️ ECA Section 3 Watch: <strong style="color: #fbbf24;">ACTIVE</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Navbar -->
+  <nav class="admin-navbar">
+    <div class="admin-nav-container">
+      <!-- Identity Group -->
+      <a href="admin.html" class="gov-identity-group">
+        <div class="gov-emblem-icon">🏛️</div>
+        <div class="gov-titles">
+          <span class="gov-hindi-title">उपभोक्ता मामले, खाद्य और सार्वजनिक वितरण मंत्रालय</span>
+          <span class="gov-english-title">
+            Department of Consumer Affairs & DFPD
+            <span class="gov-portal-pill">HQ Command</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Right Nav Actions & Profile -->
+      <div class="admin-nav-right">
+        <!-- Switch to Marketplace -->
+        <a href="index.html" class="btn-buyer-switch" title="Open Institutional Buyer Marketplace">
+          <span>🛒</span> Return to KisanSetu Buyer Portal
+        </a>
+
+        <!-- Officer Profile -->
+        <div class="officer-profile-card">
+          <div class="officer-avatar">👨‍💼</div>
+          <div class="officer-details">
+            <span class="officer-name">Dr. Rajeshwar Sharma, IAS</span>
+            <span class="officer-role">Joint Secretary (Price Monitoring)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Dashboard Content -->
+  <main class="admin-main-content">
+
+    <!-- Dashboard Hero Banner -->
+    <section class="admin-dashboard-hero">
+      <div class="hero-text-side">
+        <h1>
+          <span>National Price Intelligence & Buffer Cockpit</span>
+          <span class="gov-portal-pill" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);">Bhashini AI Synced</span>
+        </h1>
+        <p>
+          Real-time price disparity radar benchmarking traditional APMC middlemen markups against direct KisanSetu farm-gate rates. Detect artificial supply bottlenecks, monitor state buffer stock procurement, and authorize regulatory market interventions.
+        </p>
+      </div>
+
+      <div class="hero-actions-side">
+        <button type="button" class="btn-official-action" id="openInterventionBtn">
+          <span>⚡</span> Issue Executive Market Directive
+        </button>
+        <button type="button" class="btn-gazette-print" id="printReportBtn">
+          <span>📑</span> Export PMD Daily Bulletin
+        </button>
+      </div>
+    </section>
+
+    <!-- Key Performance Indicators (KPIs) -->
+    <section class="admin-kpis-grid" id="kpiGrid">
+      <!-- KPI 1 -->
+      <div class="kpi-stat-card">
+        <div class="kpi-top-row">
+          <div class="kpi-icon-box kpi-icon-green">📉</div>
+          <span class="kpi-badge highlight" id="kpiSavingsBadge">₹14.2 Cr Saved</span>
+        </div>
+        <div class="kpi-stat-value" id="kpiSavingsValue">-28.4%</div>
+        <div class="kpi-stat-label">Institutional Food Inflation Reduction</div>
+        <div class="kpi-stat-subtext">Hospitals & University messes vs. APMC mandi retail</div>
+      </div>
+
+      <!-- KPI 2 -->
+      <div class="kpi-stat-card">
+        <div class="kpi-top-row">
+          <div class="kpi-icon-box kpi-icon-blue">👨‍🌾</div>
+          <span class="kpi-badge highlight">+36.4% Take-Home</span>
+        </div>
+        <div class="kpi-stat-value" id="kpiRealizationValue">74.6%</div>
+        <div class="kpi-stat-label">Farmer Price Realization Ratio</div>
+        <div class="kpi-stat-subtext">vs. 38.2% received in traditional mandi auction chains</div>
+      </div>
+
+      <!-- KPI 3 -->
+      <div class="kpi-stat-card">
+        <div class="kpi-top-row">
+          <div class="kpi-icon-box kpi-icon-amber">📦</div>
+          <span class="kpi-badge">91.2% Target</span>
+        </div>
+        <div class="kpi-stat-value" id="kpiBufferValue">18,450 MT</div>
+        <div class="kpi-stat-label">Direct Farm-Gate Buffer Procurement</div>
+        <div class="kpi-stat-subtext">Directly sourced from 4,800+ verified FPO farmers</div>
+      </div>
+
+      <!-- KPI 4 -->
+      <div class="kpi-stat-card">
+        <div class="kpi-top-row">
+          <div class="kpi-icon-box kpi-icon-teal">🛡️</div>
+          <span class="kpi-badge highlight">0% Toxic Batches</span>
+        </div>
+        <div class="kpi-stat-value" id="kpiFssaiValue">99.4%</div>
+        <div class="kpi-stat-label">FSSAI & AGMARK Quality Compliance</div>
+        <div class="kpi-stat-subtext">Pre-dispatch chemical residue audits across institutional diets</div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs Bar -->
+    <div class="admin-tabs-bar" role="tablist">
+      <button type="button" class="admin-tab-btn active" data-target="tabPriceRadar">
+        <span>📊</span> Commodity Price Disparity Radar
+      </button>
+      <button type="button" class="admin-tab-btn" data-target="tabHoarding">
+        <span>🚨</span> AI Anti-Hoarding Radar
+        <span class="tab-badge" id="hoardingCountBadge">2 Critical</span>
+      </button>
+      <button type="button" class="admin-tab-btn" data-target="tabStates">
+        <span>🗺️</span> State Buffer Stock Quotas
+      </button>
+      <button type="button" class="admin-tab-btn" data-target="tabDbt">
+        <span>💸</span> Direct DBT & Escrow Payouts
+      </button>
+      <button type="button" class="admin-tab-btn" data-target="tabOrders">
+        <span>⚖️</span> Ministerial Gazettes & Orders
+      </button>
+    </div>
+
+    <!-- ======================================================================
+         TAB 1: COMMODITY PRICE DISPARITY RADAR
+         ====================================================================== -->
+    <section class="admin-panel-view active-panel" id="tabPriceRadar">
+      <div class="gov-card">
+        <div class="gov-card-header">
+          <div class="gov-card-title-group">
+            <h3><span>🌾</span> Essential Commodity Benchmark & Spread Tracker</h3>
+            <p>Live comparison of APMC mandi retail vs. KisanSetu direct farm gate vs. Government MSP buffer benchmark.</p>
+          </div>
+
+          <!-- Filters -->
+          <div class="card-filter-toolbar">
+            <select class="gov-select" id="commodityCategoryFilter" aria-label="Filter by Category">
+              <option value="all">All Commodities</option>
+              <option value="vegetables">Vegetables (Onion, Tomato, Potato)</option>
+              <option value="grains">Grains & Cereals (Wheat, Rice)</option>
+              <option value="pulses">Pulses & Dal (Chana, Tur)</option>
+              <option value="fruits">Fruits & Cold Chain</option>
+            </select>
+
+            <input type="text" class="gov-input" id="commoditySearchInput" placeholder="🔍 Search crop or APMC..." aria-label="Search Commodity" />
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive-wrapper">
+          <table class="gov-table" id="commodityTable">
+            <thead>
+              <tr>
+                <th>Commodity & Variety</th>
+                <th>Benchmark APMC Mandi</th>
+                <th>Mandi Retail (₹/kg)</th>
+                <th>KisanSetu Direct (₹/kg)</th>
+                <th>Govt MSP / Buffer</th>
+                <th>Middleman Spread</th>
+                <th>Hoarding Anomaly</th>
+                <th>Official Intervention</th>
+              </tr>
+            </thead>
+            <tbody id="commodityTableBody">
+              <!-- Dynamically rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 2: AI ANTI-HOARDING EARLY WARNING RADAR
+         ====================================================================== -->
+    <section class="admin-panel-view" id="tabHoarding">
+      <div class="gov-card">
+        <div class="gov-card-header">
+          <div class="gov-card-title-group">
+            <h3><span>🚨</span> Real-Time Mandi Supply Bottleneck & Cartel Intelligence</h3>
+            <p>Automated algorithms analyze mandi arrival volumes against farm-gate WhatsApp harvest registrations to flag synthetic scarcity.</p>
+          </div>
+          <span class="status-tag critical">Section 3 ECA Protocol Ready</span>
+        </div>
+
+        <!-- Alerts Grid -->
+        <div class="hoarding-alerts-grid" id="hoardingAlertsContainer">
+          <!-- Dynamically rendered by admin.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 3: STATE BUFFER STOCK QUOTAS
+         ====================================================================== -->
+    <section class="admin-panel-view" id="tabStates">
+      <div class="gov-card">
+        <div class="gov-card-header">
+          <div class="gov-card-title-group">
+            <h3><span>🗺️</span> State-Wise Direct Farm-Gate Procurement Progress</h3>
+            <p>Direct intake into Central Buffer Reserves and Institutional Kitchen networks (Target MT vs. Achieved MT).</p>
+          </div>
+          <span class="status-tag success">18 States Connected</span>
+        </div>
+
+        <!-- State Progress Grid -->
+        <div class="state-progress-grid" id="stateProgressContainer">
+          <!-- Dynamically rendered by admin.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 4: DIRECT DBT ESCROW SETTLEMENT LEDGER
+         ====================================================================== -->
+    <section class="admin-panel-view" id="tabDbt">
+      <div class="gov-card">
+        <div class="gov-card-header">
+          <div class="gov-card-title-group">
+            <h3><span>💸</span> Instant DBT Payouts & Zero-Leakage Audit Trail</h3>
+            <p>Audited transactions showing institutional payment releases directly to FPO farmer bank accounts (0% dalal commission).</p>
+          </div>
+          <div style="font-size: 0.82rem; color: #34d399; font-weight: 700;">
+            🔒 Escrow Protected • 100% Aadhaar Verified
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive-wrapper">
+          <table class="gov-table" id="dbtTable">
+            <thead>
+              <tr>
+                <th>Transaction ID</th>
+                <th>Farmer / FPO Entity</th>
+                <th>Buyer Institution</th>
+                <th>Produce & Volume</th>
+                <th>Disbursed Amount</th>
+                <th>Middleman Leakage</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="dbtTableBody">
+              <!-- Dynamically rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         TAB 5: MINISTERIAL ORDERS & GAZETTES
+         ====================================================================== -->
+    <section class="admin-panel-view" id="tabOrders">
+      <div class="gov-card">
+        <div class="gov-card-header">
+          <div class="gov-card-title-group">
+            <h3><span>⚖️</span> Executive Gazettes & Market Interventions Log</h3>
+            <p>Official ministerial directives executed through this digital command portal.</p>
+          </div>
+          <button type="button" class="btn-official-action" id="triggerNewOrderBtn">
+            <span>➕</span> New Directive
+          </button>
+        </div>
+
+        <div class="table-responsive-wrapper">
+          <table class="gov-table">
+            <thead>
+              <tr>
+                <th>Directive Number</th>
+                <th>Order Title & Subject</th>
+                <th>Authorized Officer</th>
+                <th>Impacted Geographies</th>
+                <th>Market Impact / Outcome</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody">
+              <!-- Dynamically rendered by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       INTERACTIVE EXECUTIVE INTERVENTION MODAL (<dialog>)
+       ========================================================================== -->
+  <dialog class="admin-modal-dialog" id="interventionModal">
+    <div class="modal-header-official">
+      <div class="modal-header-title">
+        <span>🏛️</span> Executive Market Intervention Order
+      </div>
+      <button type="button" class="modal-close-btn" id="closeModalBtn">&times;</button>
+    </div>
+
+    <form id="interventionForm" method="dialog">
+      <div class="modal-body-official">
+        <div class="order-field-group">
+          <label class="order-label" for="orderInterventionType">Intervention Protocol Type</label>
+          <select class="gov-select" id="orderInterventionType" required>
+            <option value="buffer-release">Immediate Central Buffer Stock Release (Price Cooling)</option>
+            <option value="eca-notice">Invoke Section 3 Essential Commodities Act (Stock Cap Inspection)</option>
+            <option value="green-corridor">Authorize Perishable Freight Subsidy & Green Transit Corridor</option>
+            <option value="fpo-offtake">Accelerate Direct FPO Institutional Offtake Contract</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div class="order-field-group">
+            <label class="order-label" for="orderCommodity">Target Commodity</label>
+            <select class="gov-select" id="orderCommodity" required>
+              <option value="Nashik Red Hybrid Onion">Nashik Red Onion</option>
+              <option value="Kolar Field Tomato">Kolar Hybrid Tomato</option>
+              <option value="Latur Desi Chana Dal">Latur Chana Dal</option>
+              <option value="Sehore Sharbati Wheat">Sehore Sharbati Wheat</option>
+            </select>
+          </div>
+
+          <div class="order-field-group">
+            <label class="order-label" for="orderVolume">Allocated Volume (MT)</label>
+            <input type="number" class="gov-input" id="orderVolume" value="4000" min="100" max="50000" required />
+          </div>
+        </div>
+
+        <div class="order-field-group">
+          <label class="order-label" for="orderZone">Priority Intervention Region</label>
+          <input type="text" class="gov-input" id="orderZone" value="NCT Delhi, Mumbai Metropolitan, Pune Canteen Clusters" required />
+        </div>
+
+        <div class="order-field-group">
+          <label class="order-label">Digital Official Memorandum Preview</label>
+          <div class="official-order-preview" id="orderPreviewBox">
+            GOVERNMENT OF INDIA<br />
+            MINISTRY OF CONSUMER AFFAIRS, FOOD & PUBLIC DISTRIBUTION<br />
+            DIRECTIVE NO: GOI-DOCA-2026-ORD-110<br />
+            SUBJECT: IMMEDIATE MARKET CALMING INTERVENTION VIA KISANSETU ESCROW ENGINE<br />
+            AUTHORIZED BY: DR. RAJESHWAR SHARMA, IAS (JOINT SECRETARY)
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer-official">
+        <button type="button" class="btn-gazette-print" id="cancelModalBtn">Cancel</button>
+        <button type="submit" class="btn-official-action" id="submitOrderBtn">
+          <span>✍️</span> Authorize & Execute Directive
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Script (ES Module) -->
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

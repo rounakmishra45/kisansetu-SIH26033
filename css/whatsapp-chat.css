@@ -1,0 +1,394 @@
+/* ==========================================================================
+   KisanSetu B2B - WhatsApp Chatbot Simulator Stylesheet
+   Authentic WhatsApp interface, voice note waveform, AI parser card, live sync
+   ========================================================================== */
+
+/* Modal Dialog for WhatsApp Simulator */
+.wa-modal-dialog {
+  border: none;
+  border-radius: 24px;
+  padding: 0;
+  max-width: 520px;
+  width: 95%;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  margin: auto;
+  background: #efeae2;
+  overflow: hidden;
+  outline: none;
+}
+.wa-modal-dialog::backdrop {
+  background: rgba(4, 18, 12, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+/* WhatsApp Phone / Window Shell */
+.wa-phone-container {
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+  max-height: 86vh;
+  position: relative;
+  background: #efeae2;
+}
+
+/* WhatsApp Top Bar */
+.wa-header {
+  background: #075E54;
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+.wa-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.wa-back-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.wa-avatar-box {
+  width: 42px;
+  height: 42px;
+  background: #128C7E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  position: relative;
+}
+.wa-online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 11px;
+  height: 11px;
+  background: #25D366;
+  border: 2px solid #075E54;
+  border-radius: 50%;
+}
+.wa-contact-meta {
+  display: flex;
+  flex-direction: column;
+}
+.wa-contact-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+.wa-contact-status {
+  font-size: 0.74rem;
+  color: #a7f3d0;
+}
+
+.wa-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.15rem;
+}
+.wa-header-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Preset Scenario Quick-Chips Bar */
+.wa-scenarios-bar {
+  background: #ffffff;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e0dacf;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 5;
+}
+.wa-scenarios-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #075E54;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wa-scenario-chips-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+.wa-chip {
+  background: #e8f5e9;
+  color: #1b5e20;
+  border: 1px solid #c8e6c9;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.wa-chip:hover {
+  background: #c8e6c9;
+  transform: translateY(-1px);
+}
+.wa-chip.active {
+  background: #075E54;
+  color: white;
+  border-color: #075E54;
+}
+
+/* Chat Messages Stream */
+.wa-messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #efeae2;
+  background-image: radial-gradient(#d3cbbe 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* WhatsApp Message Bubbles */
+.wa-bubble {
+  max-width: 85%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  word-wrap: break-word;
+}
+.wa-bubble-received {
+  align-self: flex-start;
+  background: #ffffff;
+  color: #111b21;
+  border-top-left-radius: 2px;
+}
+.wa-bubble-sent {
+  align-self: flex-end;
+  background: #d9fdd3;
+  color: #111b21;
+  border-top-right-radius: 2px;
+}
+
+.wa-msg-meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  color: #667781;
+  margin-top: 4px;
+}
+.wa-read-check {
+  color: #53bdeb;
+  font-weight: bold;
+}
+
+/* Voice Note Player Mockup */
+.wa-voice-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+.wa-play-btn {
+  width: 38px;
+  height: 38px;
+  background: #25D366;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.wa-waveform {
+  flex: 1;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.wa-waveform-bar {
+  flex: 1;
+  background: #8696a0;
+  border-radius: 2px;
+  animation: pulse-wave 1.2s ease-in-out infinite alternate;
+}
+.wa-waveform-bar:nth-child(2n) { height: 16px; }
+.wa-waveform-bar:nth-child(3n) { height: 22px; }
+.wa-waveform-bar:nth-child(4n) { height: 8px; }
+.wa-waveform-bar:nth-child(5n) { height: 18px; }
+@keyframes pulse-wave {
+  from { opacity: 0.4; transform: scaleY(0.7); }
+  to { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* AI Extracted Crop Card Inside Chat */
+.wa-ai-parsed-card {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 8px;
+}
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #166534;
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+.ai-parsed-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  color: #1e293b;
+}
+.ai-parsed-key {
+  color: #64748b;
+}
+.ai-parsed-val {
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Action Button inside Chat Bubble */
+.btn-wa-publish-action {
+  width: 100%;
+  background: #00a884;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.84rem;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(0, 168, 132, 0.3);
+  transition: var(--transition-fast);
+}
+.btn-wa-publish-action:hover {
+  background: #069476;
+  transform: translateY(-1px);
+}
+
+/* Bottom Input Bar */
+.wa-input-bar {
+  background: #f0f2f5;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+.wa-input-field {
+  flex: 1;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  outline: none;
+}
+.wa-send-btn, .wa-mic-btn {
+  background: #00a884;
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: var(--transition-fast);
+}
+.wa-send-btn:hover, .wa-mic-btn:hover {
+  background: #075E54;
+  transform: scale(1.05);
+}
+
+/* Floating WhatsApp Launcher Button (Bottom Right) */
+.floating-wa-launcher {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 999;
+  transition: var(--transition-smooth);
+}
+.floating-wa-launcher:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.55);
+}
+
+/* Listing Sync Celebration Banner */
+.sync-celebration-toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #075E54;
+  color: white;
+  border: 2px solid #25D366;
+  border-radius: var(--radius-lg);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  z-index: 3000;
+  animation: slide-down-toast 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes slide-down-toast {
+  from { transform: translate(-50%, -40px); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
